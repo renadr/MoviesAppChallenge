@@ -1,13 +1,19 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 import { styles } from '../styles/global.js';
 
 export default class Card extends React.Component {
     render() {
       return (
-        <View style={styles.container}>
-          <Text>Open up App.js to start working on your app!</Text>
-        </View>
+          <View style={styles.card}>
+            <View>
+              <Image style={styles.cardImg} source={{uri: 'https://cdn1.thr.com/sites/default/files/imagecache/landscape_928x523/2012/11/movie_theater_interior_a_l.jpg'}}/>
+            </View>
+            <View style={styles.cardTextBox}>
+              <Text style={styles.cardTitle}>The Social Network</Text>
+              <Text style={styles.cardDescription}>Some details here</Text>
+            </View>
+          </View>
       );
     }
   }
