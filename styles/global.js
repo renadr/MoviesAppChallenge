@@ -61,6 +61,11 @@ export const styles = StyleSheet.create({
     searchBtn: {
         width: 60,
         backgroundColor: 'red',
-        // flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    searchBtnImg: {
+        height: 20,
+        width: 20,
     }
   });
