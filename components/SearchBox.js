@@ -2,10 +2,16 @@ import React from 'react';
 import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from 'react-native';
 import { styles } from '../styles/global.js';
 import TheMovieDB from '../api/TheMovieDB.js';
+import { connect } from 'react-redux';
+
+const mapStateToProps = (state) => {
+    return state
+  }
 
 const APIManager = new TheMovieDB();
 
-export default class SearchBox extends React.Component {
+
+class SearchBox extends React.Component {
 
     constructor(props) {
         super(props);
@@ -16,11 +22,21 @@ export default class SearchBox extends React.Component {
         this.setState({textSearch:null});
     }
 
-    changeValueOfInput = (text) => {
+    changeValueOfInput = async (text) => {
         this.setState({
-            textSearch: text,
-            results: APIManager.findMovies(this.state.textSearch)
+            textSearch: text
         });
+        try{
+            var results = await APIManager.findMovies(this.state.textSearch);
+        }
+        catch(e){
+            console.error(e);
+        }
+        this.setState({
+            results: results
+        });
+        const action = { type: "DATA_UPDATE", value: this.state.results }
+        this.props.dispatch(action)
     }
 
     render() {
@@ -34,3 +50,5 @@ export default class SearchBox extends React.Component {
         );
     }
 }
+
+export default connect(mapStateToProps)(SearchBox)

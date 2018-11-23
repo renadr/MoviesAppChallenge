@@ -3,19 +3,28 @@ import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import { styles } from '../styles/global.js';
 
 export default class Card extends React.Component {
-    render() {
-      return (
-          <TouchableOpacity onPress={this.onPress}>
-            <View style={styles.card}>
-              <View>
-                <Image style={styles.cardImg} source={{uri: 'https://cdn1.thr.com/sites/default/files/imagecache/landscape_928x523/2012/11/movie_theater_interior_a_l.jpg'}}/>
-              </View>
-              <View style={styles.cardTextBox}>
-                <Text style={styles.cardTitle}>The Social Network</Text>
-                <Text style={styles.cardDescription}>Some details here</Text>
-              </View>
-            </View>
-          </TouchableOpacity>
-      );
-    }
+
+  constructor(props) {
+    super(props)
   }
+
+  onPress = () => {
+    console.log(this.props.data)
+  }
+
+  render() {
+    return (
+      <TouchableOpacity onPress={this.onPress}>
+        <View style={styles.card}>
+          <View>
+            <Image style={styles.cardImg} source={{ uri: 'https://image.tmdb.org/t/p/w500'+this.props.data.poster_path }} />
+          </View>
+          <View style={styles.cardTextBox}>
+            <Text style={styles.cardTitle}>{this.props.data.title}</Text>
+            <Text style={styles.cardDescription}>{this.props.data.vote_average} / 10</Text>
+          </View>
+        </View>
+      </TouchableOpacity>
+    );
+  }
+}

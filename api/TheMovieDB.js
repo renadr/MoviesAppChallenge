@@ -20,8 +20,8 @@ export default class TheMovieDB {
         } catch(e){
             console.error(e);
         }
-        console.log(responseJson);
-        return responseJson;
+        // console.log(responseJson);
+        return responseJson.results;
     }
 
 
