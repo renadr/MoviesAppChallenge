@@ -6,8 +6,10 @@ export default class SearchBox extends React.Component {
     render() {
         return (
             <View style={styles.searchBox}>
-                <TextInput placeholder={"eheh"} style={styles.searchInput}/>
-                <View style={styles.searchBtn}></View>
+                <TextInput placeholder={"Search for a movie...."} style={styles.searchInput}/>
+                <View style={styles.searchBtn}>
+                
+                </View>
             </View>
         );
     }

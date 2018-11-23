@@ -55,7 +55,8 @@ export const styles = StyleSheet.create({
     searchInput: {
         backgroundColor: 'yellow',
         flex: 1,
-        fontSize: 15,
+        fontSize: 18,
+        fontWeight: 'bold'
     },
     searchBtn: {
         width: 60,
