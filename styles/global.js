@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Dimensions, Platform, NativeModules } from 'react-native';
 
-var width = Dimensions.get('window').width; 
+var width = Dimensions.get('window').width;
 var height = Dimensions.get('window').height;
 
 const { StatusBarManager } = NativeModules;
@@ -18,20 +18,19 @@ export const styles = StyleSheet.create({
         width: width,
     },
     list: {
-        width:width,
-        backgroundColor:'blue',
-        padding:10,
+        width: width,
+        padding: 10,
     },
     card: {
         flexDirection: 'row',
         height: 80,
         alignSelf: 'stretch',
-        backgroundColor:'red',
         marginTop: 5,
     },
     cardImg: {
-        width: 80, 
-        height: 80
+        width: 80,
+        height: 80,
+        borderRadius: 10,
     },
     cardTextBox: {
         alignItems: 'flex-start',
@@ -39,28 +38,29 @@ export const styles = StyleSheet.create({
         marginLeft: 10,
     },
     cardTitle: {
-        fontSize: 15,
+        fontSize: 18,
         fontWeight: 'bold',
     },
     cardDescription: {
-        fontSize: 11,
+        fontSize: 13,
     },
     searchBox: {
         height: 70,
-        backgroundColor: 'green',
         alignSelf: 'stretch',
-        padding:10,
+        padding: 10,
         flexDirection: 'row',
     },
     searchInput: {
-        backgroundColor: 'yellow',
         flex: 1,
-        fontSize: 18,
-        fontWeight: 'bold'
+        fontSize: 20,
+        fontWeight: 'bold',
+        backgroundColor: '#F1F1F1',
+        paddingLeft: 10,
+        paddingRight: 10,
+        borderRadius: 10,
     },
     searchBtn: {
         width: 60,
-        backgroundColor: 'red',
         alignItems: 'center',
         justifyContent: 'center',
     },
@@ -68,4 +68,4 @@ export const styles = StyleSheet.create({
         height: 20,
         width: 20,
     }
-  });
+});
