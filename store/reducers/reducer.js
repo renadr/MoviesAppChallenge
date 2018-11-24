@@ -13,8 +13,4 @@ export default function newResults(state = initialState, action) {
         default:
             return state;
     }
-    // nextState = {
-    //     ...state,
-    //     action: state.favoritesFilm.filter( (item, index) => index !== favoriteFilmIndex)
-    // }
   }

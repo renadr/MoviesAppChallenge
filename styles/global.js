@@ -67,5 +67,37 @@ export const styles = StyleSheet.create({
     searchBtnImg: {
         height: 20,
         width: 20,
+    },
+    details: {
+        width:width,
+        padding: 10,
+    },
+    detailsImg: {
+        height: 250,
+        borderRadius: 10,
+    },
+    detailsTitle: {
+        fontSize: 35,
+        marginTop: 10,
+        marginBottom: 10,
+        fontWeight: 'bold'
+    },
+    detailsDescription: {
+        fontSize: 16,
+    },
+    genre: {
+        padding: 5,
+        paddingLeft: 10,
+        paddingRight: 10,
+        marginRight: 5,
+        backgroundColor: '#F1F1F1',
+        borderRadius: 5,
+        marginBottom: 10,
+    },
+    vote: {
+        fontWeight: 'bold',
+        fontSize: 80,
+        color: '#F1F1F1',
+        textAlign: 'center'
     }
 });

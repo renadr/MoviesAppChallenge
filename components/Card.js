@@ -8,13 +8,13 @@ export default class Card extends React.Component {
     super(props)
   }
 
-  onPress = () => {
-    console.log(this.props.data)
-  }
+  test = () => {
+
+  } 
 
   render() {
     return (
-      <TouchableOpacity onPress={this.onPress}>
+      <TouchableOpacity onPress={() => this.test()}>
         <View style={styles.card}>
           <View>
             <Image style={styles.cardImg} source={{ uri: 'https://image.tmdb.org/t/p/w500'+this.props.data.poster_path }} />
