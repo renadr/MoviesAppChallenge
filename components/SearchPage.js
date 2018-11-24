@@ -15,24 +15,20 @@ class SearchPage extends React.Component {
         super(props)
     }
 
-    componentDidUpdate() {
-        // console.log("componentDidUpdate : ")
-        // console.log(this.props.results)
-    }
-
     render() {  
         return (
             
             <View style={styles.container}>
                 <SearchBox />
+                {/* <Text>{this.props.results}</Text> */}
                 <ScrollView style={styles.list} horizontal={false} contentContainerStyle={{ flexGrow: 1 }} style={styles.list}>
                     <FlatList
-                        data={this.props.results}
+                        data={this.props.newResults.results}
                         renderItem={({ item }) => <Card data={item} />}
-                        keyExtractor={(item, index) => index.toString()}
-                        
+                        keyExtractor={(item, index) => index.toString()}  
                     />
                 </ScrollView>
+                
             </View>
         );
     }

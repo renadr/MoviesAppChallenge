@@ -20,6 +20,8 @@ class SearchBox extends React.Component {
 
     clearSearch = () => {
         this.setState({textSearch:null});
+        const action = { type: "REMOVE_DATA", value: null }
+        this.props.dispatch(action)
     }
 
     changeValueOfInput = async (text) => {

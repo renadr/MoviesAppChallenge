@@ -1,4 +1,4 @@
-const initialState = { results : "null" }
+const initialState = { results: null }
 
 export default function newResults(state = initialState, action) {
     let nextState;
@@ -7,10 +7,17 @@ export default function newResults(state = initialState, action) {
             nextState = {
                 ...state,
                 results: action.value
-            }  
-            return nextState || state; 
+            }
+            return nextState || state;
+            break;
+        case "REMOVE_DATA":
+            nextState = {
+                ...state,
+                results: null
+            }
+            return nextState || state;
             break;
         default:
             return state;
     }
-  }
+}
